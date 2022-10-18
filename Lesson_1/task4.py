@@ -1,4 +1,4 @@
-print("Quadratic equation: ax^2+bc+c=0")
+print("Quadratic equation: ax^2+bx+c=0")
 a= float(input("Enter a: "))
 b= float(input("Enter b: "))
 c= float(input("Enter c: "))

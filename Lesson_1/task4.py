@@ -9,4 +9,4 @@ if discriminant<0:
 elif discriminant ==0:
     print("The equation has only one solution: x="+ str(-b/(2*a)))
 elif discriminant>0:
-    print("The equation has two solutions: x1="+str((-b+discriminant**0.5)/(2*a)) +" x2="+ str((-b-discriminant**0.5)/(2*a)))
+    print("The equation has two solutions: x1="+str((-b+discriminant**0.5)/(2*a)) +" x2="+ str((-b-discriminant**0.5)/(2*a))) 

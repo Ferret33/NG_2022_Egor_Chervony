@@ -1,19 +1,20 @@
 def doOperation(operation, firstNumber, secondNumber):
-    if operation == "+":
-        operationPlus(firstNumber, secondNumber)
-    elif operation == "-":
-        operatiomMinus(firstNumber, secondNumber)
-    elif operation == "*":
-        operationMultiply(firstNumber, secondNumber)
-    elif operation == "/":
-        try:
-            operationDivision(firstNumber, secondNumber)
-        except ZeroDivisionError as e:
-            return ("Result: Infinity, "+ str(e))
-    elif operation == "square":
-        operationSquare(firstNumber, secondNumber)
-    elif operation == "square root":
-        operationSquareRoot(firstNumber, secondNumber)
+    match operation:
+        case "+":
+            operationPlus(firstNumber, secondNumber)
+        case "-":
+            operatiomMinus(firstNumber, secondNumber)
+        case "*":
+            operationMultiply(firstNumber, secondNumber)
+        case "/":
+            try:
+                operationDivision(firstNumber, secondNumber)
+            except ZeroDivisionError as e:
+                return ("Result: Infinity, "+ str(e))
+        case "square":
+            operationSquare(firstNumber, secondNumber)
+        case "square root":
+            operationSquareRoot(firstNumber, secondNumber)
    
 def operationPlus(firstNumber, secondNumber):
     print(firstNumber + secondNumber)

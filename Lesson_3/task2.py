@@ -48,15 +48,17 @@ def countAmountLetters(enterString):
 def vowelsOrConsonants(enterString):
     vowels="aeiouy"
     consonants="bcdfghjklmnpqrstvwxyz"
-    count={"Vowels letter": 0,
-           "Consonants letter": 0}
+    countvowels=[]
+    countcons=[]
     for element in enterString:
-        if  element in vowels:
-            count["Vowels letter"]+=1
+        if element in vowels:
+            countvowels.insert(0,element)
         elif element in consonants:
-            count["Consonants letter"]+=1
-    for element in count:
-        print("Amount " + str(element)+" "+ str(count[element]))
+            countcons.insert(0, element)
+    countvowels.reverse()
+    countcons.reverse()  
+    print ("Vowels letters: "+" ".join(countvowels))
+    print ("Consonants letters: "+" ".join(countcons))
 
 def devideByWordsBackShow(enterString):
     enterString=enterString.split(" ")

@@ -6,7 +6,10 @@ def doOperation(operation, firstNumber, secondNumber):
     elif operation == "*":
         operationMultiply(firstNumber, secondNumber)
     elif operation == "/":
-        operationDivision(firstNumber, secondNumber)
+        try:
+            operationDivision(firstNumber, secondNumber)
+        except ZeroDivisionError as e:
+            return ("Result: Infinity, "+ str(e))
     elif operation == "square":
         operationSquare(firstNumber, secondNumber)
     elif operation == "square root":
@@ -31,8 +34,13 @@ def operationSquareRoot(firstNumber, secondNumber):
     print(firstNumber**(1/secondNumber))
 
 def main():
-    firstNumber = float(input("Enter first number: "))
-    secondNumber = float(input("Enter second number: "))
+    try:
+        firstNumber = float(input("Enter first number: "))
+        secondNumber = float(input("Enter second number: "))
+    except ValueError as e:
+        print("Type right value, "+ str(e))
+        quit()
+        
     operation = input(("Select operation +, -, *, /, square, square root: "))
     doOperation(operation, firstNumber, secondNumber)
 main()

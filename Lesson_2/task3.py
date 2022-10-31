@@ -1,14 +1,14 @@
-numb= int(input("Enter your number: "))
+enternumber= int(input("Enter your number: "))
 numberlist=[]
-i=0
-while i<numb:
-    numberlist.insert(i, str(i+1))
-    i+=1
+iteration=0
+while iteration<enternumber:
+    numberlist.insert(iteration, str(iteration+1))
+    iteration+=1
 numberlist.reverse()  
-k=0
+iteration=0
 
-while k<numb:
+while iteration<enternumber:
     print(" ".join(numberlist))
     numberlist.remove(numberlist[0])
-    k+=1
+    iteration+=1
     

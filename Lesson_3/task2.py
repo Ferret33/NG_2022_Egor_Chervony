@@ -1,3 +1,6 @@
+from numpy import sort
+
+
 def main():
     enterString=input("Enter string: ")
     print("===================================================\n"
@@ -72,5 +75,6 @@ def showByNumber(enterString):
 
 def showAgain(enterString):
     print("Your string is: "+str(enterString))
-               
-main()
+
+while True:           
+    main()  

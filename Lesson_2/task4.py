@@ -4,10 +4,10 @@ if enternumb == 1:
     print(str(enternumb) +"! = 1" )
 
 elif enternumb>0:
-    i=enternumb-1
-    while i != 0:
-        enternumb=enternumb*i
-        i-=1    
+    nextnumber=enternumb-1
+    while nextnumber != 0:
+        enternumb=enternumb*nextnumber
+        nextnumber-=1    
         result=enternumb
     print(str(enternumbres) + "! = " + str(result))        
     

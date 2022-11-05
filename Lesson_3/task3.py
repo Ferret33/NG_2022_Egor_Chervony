@@ -1,34 +1,14 @@
 def main():
-    enterString= input("Type your string: ").lower()
-    countletters(enterString)
+    enterString= input("Type your string: ")
+    setString= set(enterString)
+    countletters(enterString, setString)
 
 
-def countletters(enterString):
-    print("Number a letter: "+str(enterString.count("a")))
-    print("Number b letter: "+str(enterString.count("b")))
-    print("Number c letter: "+str(enterString.count("c")))
-    print("Number d letter: "+str(enterString.count("d")))
-    print("Number e letter: "+str(enterString.count("e")))
-    print("Number f letter: "+str(enterString.count("f")))
-    print("Number g letter: "+str(enterString.count("g")))
-    print("Number h letter: "+str(enterString.count("h")))
-    print("Number i letter: "+str(enterString.count("i")))
-    print("Number j letter: "+str(enterString.count("j")))
-    print("Number k letter: "+str(enterString.count("k")))
-    print("Number l letter: "+str(enterString.count("l")))
-    print("Number m letter: "+str(enterString.count("m")))
-    print("Number n letter: "+str(enterString.count("n")))
-    print("Number o letter: "+str(enterString.count("o")))
-    print("Number p letter: "+str(enterString.count("p")))
-    print("Number q letter: "+str(enterString.count("q")))
-    print("Number r letter: "+str(enterString.count("r")))
-    print("Number s letter: "+str(enterString.count("s")))
-    print("Number t letter: "+str(enterString.count("t")))
-    print("Number u letter: "+str(enterString.count("u")))
-    print("Number v letter: "+str(enterString.count("v")))
-    print("Number w letter: "+str(enterString.count("w")))
-    print("Number x letter: "+str(enterString.count("x")))
-    print("Number y letter: "+str(enterString.count("y")))
-    print("Number z letter: "+str(enterString.count("z")))
-    
+def countletters(enterString, setString):
+    countList=list(map(lambda element: int(enterString.count(element)), setString))
+    countdict = {}
+    for i in range(len(setString)):
+        countdict[list(setString)[i]] = countList[i]
+    for element in countdict.keys():
+        print(str(element)+":"+str(countdict[element]))
 main()    

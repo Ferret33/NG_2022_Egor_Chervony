@@ -1,6 +1,3 @@
-from numpy import sort
-
-
 def main():
     enterString=input("Enter string: ")
     print("===================================================\n"

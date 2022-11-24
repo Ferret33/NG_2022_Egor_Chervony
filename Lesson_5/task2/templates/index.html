@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <!--  -->
+        <!-- <link rel="stylesheet" href="/git/NG_2022_Egor_Chervony/Lesson_5/task1/static/css/style.css"> -->
+        <!--  -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+
+    </head>
+
+    <body>
+        <div class="container">
+        <h3>Type values, and select the option</h3>
+        <div class="workspace">
+            <form class="typeform">
+                <center>
+                <label for="firstvalue">First number:</label><br>
+                <input value="0" type="text" id="firstvalue" name="firstvalue"><br>
+                <label for="secondvalue">Second number:</label><br>
+                <input value="0" type="text" id="secondvalue" name="secondvalue"><br><br>
+                
+                <label>Result number ▼</label><br><br>
+                <label class="resultvalue"><b >{{res}}</b></label><br><br>    
+                
+                <button formaction="/pls">+</button>
+                <button formaction="/min">-</button>
+                <button formaction="/multy">*</button>
+                <button formaction="/dev">/</button>
+                <button formaction="/square">x<sup>y</sup></button>
+                <button formaction="/squareroot"><sup>y</sup>√x</button>   
+                </center>
+                
+                <!-- <form action="/" class="buttonsoptionform">
+                    <center>
+                    </center>
+                    
+                </form> -->
+            </form>
+        </div>
+        </div>
+    </body>
+</html>

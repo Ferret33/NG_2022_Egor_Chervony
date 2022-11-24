@@ -4,16 +4,13 @@ app = Flask("Calculator")
 
 @app.route('/')
 def index():
-    # test = request.args.get('firstvalue')
-    # prfloat(test)
-    # res =0
-    # res= float(float(request.args.get('firstvalue'))+float(request.args.get('secondvalue')))
     return render_template("index.html")
-    # return render_template("index.html")
+
 @app.route('/pls')
 def pls():
     res= float(float(request.args.get('firstvalue'))+float(request.args.get('secondvalue')))
     return render_template("index.html", res =res)
+
 @app.route('/min')
 def min():
     res= float(float(request.args.get('firstvalue'))-float(request.args.get('secondvalue')))
@@ -23,6 +20,7 @@ def min():
 def multy():
     res= float(float(request.args.get('firstvalue'))*float(request.args.get('secondvalue')))
     return render_template("index.html", res =res)
+
 @app.route('/dev')
 def dev():
     if int(request.args.get('secondvalue'))==0:
@@ -30,10 +28,12 @@ def dev():
     else:
         res= float(float(request.args.get('firstvalue'))/float(request.args.get('secondvalue')))
     return render_template("index.html", res =res)
+
 @app.route('/square')
 def square():
     res= float(float(request.args.get('firstvalue'))**float(request.args.get('secondvalue')))
     return render_template("index.html", res =res)
+
 @app.route('/squareroot')
 def squareroot():
     if int(request.args.get('secondvalue'))==0:

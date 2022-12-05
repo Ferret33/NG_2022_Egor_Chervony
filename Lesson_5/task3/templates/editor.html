@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Editor for News line</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="workspaceedit">
+        <center>
+            <form action="/editor">
+                <h4>Type the title:</h4>
+                <input name="newstitle" type="text">
+                <h4>Type the text</h4>
+                <textarea name="newstext" id="" cols="50" rows="10"></textarea><br>
+                <button formaction="/edit">Publish</button>
+            </form>
+            <form action="/">
+                <br>
+                <button>Return to Main</button>
+            </form>
+        </center>
+    </div>
+</body>
+</html>

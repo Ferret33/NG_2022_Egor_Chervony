@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+        <!-- <link rel="stylesheet" href="/Lesson_6/task1/static/css/style.css"> -->
+    </head>
+
+    <body>
+        <div class="container">
+        <h3>Simple chat</h3>
+        <div class="workspace">
+            <form class="typeform" name="typeform">
+                <center>
+                <label for="username">User name:</label><br>
+                <input maxlength="20" placeholder="User" type="text" id="username" name="username"><br><br>
+                <label for="massagetext">Massage:</label><br>
+                <textarea maxlength="200" name="massagetext" cols="75" rows="5"></textarea><br>
+                <button formaction="/sendmassage">Send</button>   
+                <hr>
+            </center>
+            <div class="htmltable" id="htmltable">{{htmltable|safe}}</div>
+            </form>
+        </div>
+        </div>
+    </body>
+    <script>
+        function updatePage() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("htmltable").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "/htmltableget", true);
+            xhttp.send();
+        }
+        window.setInterval(() => {
+            updatePage();
+        }, 1000);
+    </script>
+</html>

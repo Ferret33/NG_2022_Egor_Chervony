@@ -1,0 +1,69 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: #212121;
+}
+h3{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    color: azure;
+    
+}
+button{
+    border: 3px solid gray;
+    background: none;
+    color: azure;
+}
+button:hover{
+    color: gray;
+    scale: 0.8;
+}
+button:active{
+    border: 3px solid white;
+    color: white;
+}
+label{
+    color: azure;
+}
+.workspace{
+    /* margin-top: 50vh; */
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.typeform{
+    border: 4px solid gray;
+    padding: 2vh 5vw 2vh 5vw;
+}
+table{
+    align-content: center;
+    width: 95%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    color: azure;
+}
+td{
+    word-wrap: break-word;
+    border-bottom: solid 1px azure; 
+}
+textarea{
+    background-color: #212121;
+    color: azure;
+    border: solid 0.5px azure;
+}
+input{
+    background-color: #212121;
+    color: azure;
+    border: solid 0.5px azure;
+}
+.tdclass0{
+    width: 20%;
+}
+.htmltable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 from dbworker import *
 
 app = Flask("Chat")
@@ -14,8 +14,11 @@ def index():
 def sendmassage():
     user = request.args.get('username')
     massage = request.args.get('massagetext')
-    if user == "":
-        return redirect("/")
+    if user == "" or user == " ":
+        rows = getMassage("chat.db")
+        generatetable = HtmlTableGenerator(rows)
+        warn = "User name is empty. Please write corect input data" 
+        return render_template("index.html", htmltable=generatetable,warning=warn )
     else:
         addMassageToDb("chat.db", user, massage)
         return redirect("/")

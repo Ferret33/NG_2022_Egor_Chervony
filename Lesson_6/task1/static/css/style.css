@@ -67,3 +67,7 @@ input{
     justify-content: center;
     align-items: center;
 }
+.warning{
+    background-color: red;
+    color: azure;
+}

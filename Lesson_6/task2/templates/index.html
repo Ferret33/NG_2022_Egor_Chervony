@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+        <link rel="stylesheet" href="/NG_2022_Egor_Chervony/Lesson_6/task2/static/css/style.css">
+    </head>
+
+    <body>
+        <div class="container">
+        <h3>Choose what information you want to know about your computer</h3>
+        <div class="workspace">
+            <form class="typeform" name="typeform">
+                <div class="checkboxes">
+                <input type="checkbox" name="cpu">CPU<br>
+                <input type="checkbox" name="cpucors">CPU Cors<br>
+                <input type="checkbox" name="cpufamily">CPU Family<br>
+                <input type="checkbox" name="architecture">Architecture<br>
+                <input type="checkbox" name="machinetype">Machine type<br>
+                <input type="checkbox" name="ram">RAM<br>
+                <input type="checkbox" name="ipadress">IP-Adress<br>
+                <input type="checkbox" name="diskpartition">Disk Partition<br>
+                <input type="checkbox" name="system">System<br>
+                <input type="checkbox" name="computername">Computer name<br><br>
+                <button formaction="/sendmassage">Gether information</button><br>
+                </div>
+            <div class="htmltable" id="htmltable"><br><br>{{htmltable|safe}}</div>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>

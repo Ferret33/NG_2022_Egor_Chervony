@@ -2,6 +2,11 @@
 def prepareFile(name):
     file = open(str(name),"r")
     return file
+def prepareNewslist(name):
+    newslst = []
+    for lines in prepareFile(name).readlines():
+        newslst.append(lines)
+    return newslst
 
 def optionsNewsGenerator(name):
     file = prepareFile(name)
@@ -20,10 +25,10 @@ def optionsNewsGenerator(name):
     return newsoptions
 
 def searchNews(data, name):
-    file=prepareFile(name)
     newslst = []
-    for lines in file.readlines():
+    for lines in prepareFile(name).readlines():
         newslst.append(lines)
+    print(newslst)
     if data in newslst:
-        print(data)
-        return str(data)
+        return "ok"
+            

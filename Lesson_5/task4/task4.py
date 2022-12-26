@@ -30,6 +30,6 @@ def admin():
 def opennews():
     newsoption= optionsNewsGenerator("News.txt")
     data = "<h5>"+str(request.args.get('selectnews'))+"</h5>"
-    news = searchNews(str(data), "News.txt")
+    news = searchNews(data, "News.txt")
     return render_template("admin.html", newsoptions=newsoption, news=news)
 app.run(host="0.0.0.0", port=8888)

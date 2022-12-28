@@ -40,3 +40,25 @@ def searchNews(data, name):
                 ind+=1
                 iteration+=1
             return news
+def deleteNews(data, name):
+    newslst=[]
+    file = prepareFile(name)
+    for line in file.readlines():
+         newslst.append(line)
+         file.close
+    for element in newslst:
+        if str(element)==str(data)+"\n":
+            iteration = 0
+            indnews=newslst.index(data+"\n")-1
+            print(indnews)
+            while iteration<4:
+                del newslst[indnews]
+                iteration+=1
+    file= open(name, "w")
+    for lines in newslst:
+        file.write(lines)
+    file.close
+
+        
+
+

@@ -1,0 +1,41 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+body{
+    background-color: #212121;
+}
+h1, h5{
+    margin-left:  20%;
+    margin-right: 20%;
+    max-width: 100vw;
+    text-align: center;
+    color: azure;
+    word-wrap: break-word;
+}
+h2, h3{
+    margin-left: 10%;
+    margin-right: 10%;
+    word-wrap: break-word;
+    color: azure;
+    
+}
+h4{
+    color: azure;
+}
+button{
+    border: 3px solid gray;
+    background: none;
+    color: azure;
+}
+form{
+    text-align: center;
+}
+.workspaceedit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.warning{
+    background-color: red;
+}

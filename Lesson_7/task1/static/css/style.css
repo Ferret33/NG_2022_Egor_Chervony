@@ -1,0 +1,32 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    color: azure;
+    
+}
+body{
+    background-color: #212121;
+}
+button{
+    border: 3px solid gray;
+    background: none;
+    color: azure;
+}
+button:hover{
+    color: gray;
+    scale: 0.8;
+}
+button:active{
+    border: 3px solid white;
+    color: white;
+}
+
+input{
+    background-color: #333333;
+    color: azure;
+    font-size: large;
+}
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

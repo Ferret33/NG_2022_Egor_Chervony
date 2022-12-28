@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Image Downloader</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="workspace">
+                <form>
+                <center>
+            <input type="text" name="URL" placeholder="Put URL here">
+            <h3>Download all images from site</h3>
+            <button formaction="/process">Download</button>
+        </center>
+    </form>
+            </div>
+        </div>
+    </body>
+</html>

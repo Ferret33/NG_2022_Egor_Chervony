@@ -32,4 +32,12 @@ def opennews():
     data = "<h5>"+str(request.args.get('selectnews'))+"</h5>"
     news = searchNews(data, "News.txt")
     return render_template("admin.html", newsoptions=newsoption, news=news)
+
+@app.route('/deletenews')
+def deletenews():
+    newsoption= optionsNewsGenerator("News.txt")
+    data = "<h5>"+str(request.args.get('selectnews'))+"</h5>"
+    news = "<h2 class='warning'>This new was deleted</h2><br><br>" + searchNews(data, "News.txt")
+    deleteNews(data, "News.txt")
+    return render_template("admin.html", newsoptions=newsoption, news=news)
 app.run(host="0.0.0.0", port=8888)

@@ -9,11 +9,12 @@
         <center>
             <form>
 
-                <h4>Choose news</h4>
+                <h4>Choose news by time code</h4>
                 <select name="selectnews" id="selectnews">
                     {{newsoptions|safe}}
                 </select>
-                <button formaction="/opennews">Open</button><br><br>
+                <button formaction="/opennews">Open</button>
+                <button formaction="/deletenews">Delete</button><br><br>
                 {{news|safe}}
             </center>
         </form>

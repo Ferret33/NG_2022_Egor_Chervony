@@ -53,7 +53,6 @@ def deleteNews(data, name):
             print(indnews)
             while iteration<4:
                 del newslst[indnews]
-                # newslst.remove(newslst[indnews])
                 iteration+=1
     file= open(name, "w")
     for lines in newslst:

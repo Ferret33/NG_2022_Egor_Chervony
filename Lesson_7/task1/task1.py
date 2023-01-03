@@ -11,11 +11,9 @@ def index():
 
 @app.route('/process')
 def process():
-    downloadImg()
     Url = request.args.get('URL')
     site = Url.split("/")[2]
-    zippingImg(site)
-    
+    downloadZippingInThreads(site,Url)
     return send_file("zips/"+str(site)+".zip")
 
 app.run(host="0.0.0.0", port=8888)

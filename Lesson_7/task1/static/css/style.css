@@ -1,6 +1,7 @@
 *{
     font-family: 'Courier New', Courier, monospace;
     color: azure;
+    transition: 0.3s;
     
 }
 body{

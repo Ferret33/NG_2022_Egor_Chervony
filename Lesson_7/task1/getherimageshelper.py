@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, send_file, redirect
 from rich.console import Console
 import requests
 console = Console()
@@ -6,13 +6,11 @@ import os
 import zipfile
 import threading
 
-def downloadImg():
-    Url = request.args.get('URL')
+def downloadImg(site,Url):
     headers = {
     'User-Agent': '...',
     'referer': 'https://...'
     }
-    site = Url.split("/")[2]
     print(site)
     req = requests.get(Url, headers=headers)
     img = [".img",".jpg", ".jpeg", ".gif", ".png",".svg"]
@@ -40,9 +38,7 @@ def downloadImg():
                         else:
                             links.append(Url+"/"+line) 
                     for element in links:
-                            # print (element)
                             try:
-                            # if not os.path.exists("temp/"+site+"/"+str(line.split("/")[-1])):
                                 with open("temp/"+site+"/"+str(line.split("/")[-1]),"wb") as imgfile:
                                     imgContent = requests.get(str(element)).content
                                     imgfile.write(imgContent)
@@ -62,5 +58,15 @@ def zippingImg(site):
             for files in os.walk("temp/"+site):
                 for elements in files[2]:
                     zip.write(elements)
-    print("-----END-----")
+    
 
+def downloadZippingInThreads(site,Url):
+    threads=[]
+    threads.append(threading.Thread(target=downloadImg(site,Url)))
+    threads.append(threading.Thread(target=zippingImg(site)))
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    print("-----END-----")
+    

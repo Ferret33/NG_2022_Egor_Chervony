@@ -25,14 +25,14 @@ def downloadImg(site,Url):
         for line in html:
             for ex in img:
                 if ex in line:
-                    if line[0:4] == "http" and line[-4:] == ex:
+                    if line[0:4] == "http" and line[-4:] or line[-5:]  == ex:
                         links.append(line)
-                    elif line[0] == "/" and line[-4:] == ex:
+                    elif line[0] == "/" and line[-4:] or line[-5:] == ex:
                         if Url[-1] == "/":
                             links.append(Url+ line[1:])
                         else:
                             links.append(Url+line)   
-                    elif line[0] != "/" and line[-4:] == ex:
+                    elif line[0] != "/" and line[-4:] or line[-5:] == ex:
                         if Url[-1] == "/":
                             links.append(Url+line)
                         else:

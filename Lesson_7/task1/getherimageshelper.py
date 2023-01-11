@@ -11,7 +11,6 @@ def downloadImg(site,Url):
     'User-Agent': '...',
     'referer': 'https://...'
     }
-    print(site)
     req = requests.get(Url, headers=headers)
     img = [".img",".jpg", ".jpeg", ".gif", ".png",".svg"]
     links=[]
@@ -21,7 +20,10 @@ def downloadImg(site,Url):
     path="temp/"+site
     for files in os.scandir(path):
         os.remove(files)
-    with console.status("Downloading...", spinner="monkey"):
+    print("Conecting to site...")
+    if req.status_code == 200 or 300:
+        print(site)
+        print("200")
         for line in html:
             for ex in img:
                 if ex in line:
@@ -37,15 +39,26 @@ def downloadImg(site,Url):
                             links.append(Url+line)
                         else:
                             links.append(Url+"/"+line) 
-                    for element in links:
-                            try:
-                                with open("temp/"+site+"/"+str(line.split("/")[-1]),"wb") as imgfile:
-                                    imgContent = requests.get(str(element)).content
-                                    imgfile.write(imgContent)
-                                    imgfile.close
-                            except:
-                                pass
 
+
+        print ("Find "+str(len(links))+" image(s)" )
+        imgcounter=1
+        with console.status("Downloading...", spinner="monkey"):
+            for element in links:
+                try:
+                    with open("temp/"+site+"/"+str(element.split("/")[-1]),"wb") as imgfile:
+                        imgContent = requests.get(str(element)).content
+                        imgfile.write(imgContent)
+                        imgfile.close
+                        print("Image "+ str(element.split("/")[-1])+ " was saved!")
+                    print(str(imgcounter)+"/"+str(len(links)))
+                    imgcounter+=1    
+                except:
+                    pass
+
+    else:
+        print ("Wrong connection!")
+    
 def zippingImg(site):
     if not os.path.exists("zips/"+site):
         with zipfile.ZipFile("zips/"+str(site)+".zip","w") as zip:
@@ -58,7 +71,6 @@ def zippingImg(site):
             for files in os.walk("temp/"+site):
                 for elements in files[2]:
                     zip.write(elements)
-    
 
 def downloadZippingInThreads(site,Url):
     threads=[]

@@ -74,8 +74,8 @@ def zippingImg(site):
 
 def downloadZippingInThreads(site,Url):
     threads=[]
-    threads.append(threading.Thread(target=downloadImg(site,Url)))
-    threads.append(threading.Thread(target=zippingImg(site)))
+    threads.append(threading.Thread(target=downloadImg, args=(site, Url)))
+    threads.append(threading.Thread(target=zippingImg, args=(site,)))
     for thread in threads:
         thread.start()
     for thread in threads:
